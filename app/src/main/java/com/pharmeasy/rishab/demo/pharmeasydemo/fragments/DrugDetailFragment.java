@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.pharmeasy.rishab.demo.pharmeasydemo.R;
 import com.pharmeasy.rishab.demo.pharmeasydemo.dataObjects.Drug;
@@ -60,9 +61,10 @@ public class DrugDetailFragment extends Fragment
             textView.setText( "Rs " + drug.getPrice() );
             textView = ( TextView ) rootView.findViewById( R.id.form );
             textView.setText( drug.getForm() );
+            RelativeLayout actionContainer;
             if ( drug.isAvalable() )
             {
-                  RelativeLayout actionContainer = ( RelativeLayout ) rootView.findViewById( R.id.action_container );
+                  actionContainer = ( RelativeLayout ) rootView.findViewById( R.id.action_container );
                   actionContainer.setBackgroundResource( R.drawable.oval_accent_yellow_circle );
                   ImageView buyImageView = ( ImageView ) rootView.findViewById( R.id.buy_image );
                   buyImageView.setVisibility( View.VISIBLE );
@@ -71,14 +73,21 @@ public class DrugDetailFragment extends Fragment
             }
             else
             {
-                  RelativeLayout actionContainer = ( RelativeLayout ) rootView.findViewById( R.id.action_container );
+                  actionContainer = ( RelativeLayout ) rootView.findViewById( R.id.action_container );
                   actionContainer.setBackgroundResource( R.drawable.oval_accent_red_circle );
                   ImageView buyImageView = ( ImageView ) rootView.findViewById( R.id.buy_image );
                   buyImageView.setVisibility( View.INVISIBLE );
                   TextView outOfStock = ( TextView ) rootView.findViewById( R.id.sold_out );
                   outOfStock.setVisibility( View.VISIBLE );
             }
-
+            actionContainer.setOnClickListener( new View.OnClickListener()
+            {
+                  @Override
+                  public void onClick( View v )
+                  {
+                        Toast.makeText( getActivity(), "Still Working on this feature", Toast.LENGTH_LONG ).show();
+                  }
+            } );
             ImageView image = ( ImageView ) rootView.findViewById( R.id.image );
             image.setImageResource( getDummyImage( getArguments().getInt( ARG_SECTION_NUMBER ) ) );
             return rootView;

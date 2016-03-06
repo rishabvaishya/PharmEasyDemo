@@ -22,7 +22,7 @@
             android:layout_marginLeft="80dip"
             android:layout_marginRight="12dip"
             android:maxLines="1"
-            android:text="PharmEasy"
+            android:text="@string/pharmeasy"
             android:textColor="@android:color/white"
             android:textSize="35dip"
             android:textStyle="bold"/>
@@ -39,7 +39,7 @@
             android:shadowDx="-2"
             android:shadowDy="-2"
             android:shadowRadius="10"
-            android:text="Created By"
+            android:text="@string/created_by"
             android:textColor="@android:color/black"
             android:textSize="14dp"/>
 
@@ -54,7 +54,7 @@
             android:shadowDx="-2"
             android:shadowDy="-2"
             android:shadowRadius="10"
-            android:text="Rishab"
+            android:text="@string/developer_name"
             android:textColor="@android:color/black"
             android:textSize="12dp"
             />
@@ -84,7 +84,7 @@
                   android:shadowDx="-2"
                   android:shadowDy="-2"
                   android:shadowRadius="10"
-                  android:text="Fetching Data, May take a while..."
+                  android:text="@string/loader_message"
                   android:textColor="@android:color/black"
                   android:textSize="16dp"
                   />
